@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161016125024) do
+ActiveRecord::Schema.define(version: 20161016143539) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "germs", force: :cascade do |t|
+    t.string   "germ_name"
+    t.string   "germ_size"
+    t.text     "germ_description"
+    t.string   "germ_image_url"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
